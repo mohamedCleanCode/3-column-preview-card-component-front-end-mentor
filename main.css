@@ -1,0 +1,108 @@
+:root {
+  --orange: #e28525;
+  --dark-green: #00403f;
+  --light-green: #016972;
+  --white: #fff;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: 90%;
+  height: 400px;
+  margin: 100px auto;
+  background-color: #eee;
+  border-radius: 12px;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    height: 184vh;
+    margin: 20px auto;
+  }
+}
+.col {
+  width: calc(100% / 3);
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+@media (max-width: 767px) {
+  .container .col {
+    width: 100%;
+    height: 500px;
+  }
+}
+.col .title {
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: -3px;
+}
+.col .text {
+  width: 75%;
+  line-height: 1.5;
+  color: #eeee;
+}
+.col button {
+  width: 50%;
+  border: none;
+  padding: 15px 0px;
+  border-radius: 25px;
+  font-size: 17px;
+  border: 2px solid var(--white);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.col:first-child {
+  background-color: var(--orange);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+@media (max-width: 767px) {
+  .col:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0;
+  }
+}
+.col:first-child button {
+  color: var(--orange);
+}
+.col:nth-child(2) {
+  background-color: var(--light-green);
+}
+.col:nth-child(2) path {
+  fill: #2fb9c4;
+}
+.col:nth-child(2) button {
+  color: var(--light-green);
+}
+.col:last-child {
+  background-color: var(--dark-green);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+@media (max-width: 767px) {
+  .col:last-child {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 12px;
+  }
+}
+.col:last-child path {
+  fill: #12bc9b;
+}
+.col:last-child button {
+  color: var(--dark-green);
+}
+.col button:hover {
+  background-color: transparent;
+  color: var(--white);
+}
